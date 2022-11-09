@@ -1,0 +1,177 @@
+/* nejsme vcerejsi, pouzivame moderni box model */
+html { box-sizing: border-box; }
+*, :after, :before { box-sizing: inherit; }
+
+
+body {
+	margin: 0;
+	padding: 30px;
+	font-family:  'Alice', serif;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+h1, h2, h3 {
+	font-family: 'Kaushan Script', cursive;
+	font-weight: normal;
+	margin: 0;
+}
+
+blockquote {
+	font-family: 'Kaushan Script', cursive;
+}
+
+/* --------------------------------------------------- */
+
+/* barvy */
+:root {
+	--svetla: #edf3f5;
+	--seda: #b2bec3;
+	--tmava: #636e72;
+	--oranzova: #ee5a24;
+	--cervena: #ea2027;
+	--zluta: #f79f1f;
+	--zelena: #a3cb38;
+	--limetka: #c4e538;
+}
+
+/*
+	Všimni si, jak jsou zde nadefinované barvy.
+	Potřebný kód barvy si odtamtud můžeš vyzobnout a použít
+	ve svém kódu, ale existuje i lepší způsob.
+
+  CSS custom properties, někdy také označované jako CSS
+	variables (CSS proměnné), je způsob, jak si	pojmenovat
+	nějakou hodnotu a potom ji v kódu opakovaně používat.
+	Často se používá právě pro barvy a další "nastavení".
+
+	Když si chci nějakou hodnotu nadefinovat, použiji zápis
+	--mujnazev: hodnota
+	Když chci, abych mohl hodnotu používat všude v CSS,
+	založím ji uvnitř selektoru :root, takže např.:
+	:root {
+		--mojebarva: #ff8800;
+	}
+
+	Chci-li potom dál v CSS hodnotu použít, stačí použít funkci var a v závorce název proměnné.Např.:
+	.odstavec {
+		color: var(--mojebarva);
+	}
+
+	Nemusím si tak pamatovat kódy barev nebo neustále v CSS jezdit nahoru a dolů, abych si je odněkud zkopíroval.
+
+	Více o CSS custom properties:
+	- https://www.w3schools.com/css/css3_variables.asp
+	- https://css-tricks.com/patterns-for-practical-css-custom-properties-use/
+	- https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/
+*/
+
+
+.blog{
+	display: grid;
+	grid-template-columns: 1fr 4fr 2fr;
+	grid-template-rows: auto;
+	column-gap: 40px;
+}
+
+h1{
+	color:#c4e538;
+	font-size: 70px;
+}
+
+h2{
+	font-size: 50px;
+}
+
+.meta{
+	color: var(--seda);
+}
+
+h2{
+	color: #c4e538;
+}
+
+.tip-vlevo{
+	grid-column: 1 / 2;
+	margin: 0;
+	background-color: var(--seda);
+	text-align: right;
+	padding: 30px;
+	border-right: 3px solid var(--oranzova);
+}
+
+
+
+.tip img{
+	height: 150px;
+	width: 100%;
+	height: auto;
+	padding: 10px;
+  
+}
+
+.tip-vpravo{
+	grid-column: 3 / 4;
+	margin: 0;
+	margin: 0;
+	background-color: var(--seda);
+	text-align: right;
+	padding: 30px;
+	border-left: 3px solid var(--oranzova);
+
+
+}
+
+h2,
+header,
+blockquote,
+footer,
+figcaption,
+p{
+	grid-column: 2 / 3;
+}
+
+figure{
+	grid-column: 1 / 4;
+	text-align: center;
+}
+
+footer{
+	color: var(--seda);
+}
+
+
+
+blockquote{
+	text-align: center;
+	font-size: 30px;
+	color: var(--seda);
+}
+
+blockquote::after{
+	background-color: var(--limetka);
+	content: "";
+	display: block;
+	width: 80px;
+	height: 5px;
+	margin: 10px;
+	margin-left: 350px;
+
+
+}
+
+
+blockquote::before{
+
+	background-color: var(--limetka);
+	content: "";
+	display: block;
+	width: 80px;
+	height: 5px;
+	margin: 10px;
+	margin-left: 350px;
+
+}
+
+a:link, a:visited {text-decoration: none}
+a:link, a:visited {var(--seda)}
