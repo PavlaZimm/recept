@@ -140,6 +140,9 @@ footer{
 	color: var(--seda);
 }
 
+footer a{
+	color: var(--seda)
+}
 
 
 blockquote{
